@@ -1,0 +1,130 @@
+/* body{
+    background-color: pink;
+    color:black;
+    padding: 50px 50px;
+    
+}
+#form{
+    justify-self: center;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 40px 70px 40px 70px;
+    background-color: rgb(198, 198, 255);
+} */
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #80b1ff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form Container */
+form {
+  background: pink;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto;
+  animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #6c63ff;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+}
+
+input[type="radio"] {
+  margin-right: 6px;
+}
+
+form button {
+  background: #6c63ff;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+form button:hover {
+  background: #574b90;
+  transform: scale(1.05);
+}
+
+/* Student Card Display */
+#stdCard {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 700px;
+}
+
+#stdCard div {
+  background: white;
+  color:orangered;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  animation: popUp 0.6s ease-in-out;
+  border-left: 8px solid #6c63ff;
+}
+
+@keyframes popUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+#stdCard h1 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+#stdCard p {
+  margin: 6px 0;
+  color: #555;
+}

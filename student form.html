@@ -1,0 +1,105 @@
+<html>
+
+<head>
+  <title>form</title>
+  <link rel="stylesheet" href="student.css">
+</head>
+
+<body>
+
+  <form id="form">
+    <label> name : <input type="text" name="name" id="name"></label><br><br>
+    <label>email id : </label><input type="email" name="email"><br><br>
+    <label> mobile number : </label><input type="number" name="number"><br><br>
+
+    <p>date of birth :</p>
+    <input type="date" name=dd><br><br>
+    <label>subject : </label><input type="text" name="subject"><br><br>
+    <label>mark : </label><input type="number" name="mark"><br><br>
+    <label>grade: </label><input type="text" name="grade"><br><br>
+
+    <button type="submit">submit</button>
+
+  </form>
+  <div id="stdCard">
+
+  </div>
+
+  <script>
+    let form = document.querySelector("#form")
+    let stdCard = document.querySelector("#stdCard")
+    let name = document.querySelector("#name")
+    name.focus();
+    class studentForm {
+
+      constructor(name, EmailId, number, dateBirth, subject, mark, grade) {
+        this.Name = name;
+        this.Email = EmailId;
+        this.phoneNo = number;
+        
+        this.DOB = dateBirth
+        this.sub = subject;
+        this.Mark = mark;
+        this.Grade = grade;
+      }
+
+      introduce() {
+        return `I am ${this.Name},my grade in ${this.sub} is ${this.Grade}`
+
+      }
+
+    }
+
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      let nameInput = form.elements.name.value.trim();
+      let emailInput = form.elements.email.value.trim();
+      let numberInput = form.elements.number.value;
+
+      let dobInput = form.elements.dd.value.trim();
+      let subInput = form.elements.subject.value.trim();
+      let markInput = form.elements.mark.value.trim();
+      let gradeInput = form.elements.grade.value.trim();
+
+      console.log(numberInput);
+
+      console.log(dobInput);
+      console.log(subInput);
+      console.log(markInput);
+      console.log(gradeInput);
+
+
+      if (!nameInput || !emailInput || !numberInput || !dobInput || !subInput || !markInput || !gradeInput) {
+        return;
+      }
+
+      let NewStudent = new studentForm(nameInput, emailInput, numberInput, dobInput, subInput, markInput, gradeInput)
+
+
+      let newstdDiv = document.createElement("div");
+
+      newstdDiv.innerHTML = `<h1> name : ${NewStudent.Name}</h1>
+                               <p> email Id : ${NewStudent.Email}</p>
+                               <p> phone no : ${NewStudent.phoneNo}</p>
+                       
+                          <p> DOB : ${NewStudent.DOB}</p>
+                          <P> subject : ${NewStudent.sub}</p>
+                          <p> mark :${NewStudent.Mark}</p>
+                          <p> Grade : ${NewStudent.Grade}</p>`;
+      stdCard.appendChild(newstdDiv);
+      form.reset();
+      name.focus();
+
+
+    })
+
+
+
+
+  </script>
+
+</body>
+
+</html>
